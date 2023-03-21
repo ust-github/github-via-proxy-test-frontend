@@ -1,0 +1,14 @@
+image:
+  repository: artifactory.dagility.com/docker/github-via-proxy-test-frontend
+  tag: latest
+  pullPolicy: Always
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx-internal
+  hosts:
+  - host: github-via-proxy-test-frontend-default.dagility.com
+    paths:
+    - /
+serviceAccount:
+  create: false
